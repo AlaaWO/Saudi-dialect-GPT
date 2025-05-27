@@ -14,3 +14,4 @@ It contains 14 million parameters.
 - [ ] Clean the base model's data further and retrain with higher parameters.
 - [ ] If a budget is available, use Lambda for training. Else, use Kaggle, Huggingface, etc.
 
+- Note: this project uses minbpe tokenizer (https://github.com/karpathy/minbpe).
