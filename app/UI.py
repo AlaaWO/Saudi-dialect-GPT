@@ -4,9 +4,8 @@ import torch
 from minbpe import RegexTokenizer
 from transformer.model import GPTLanguageModel
 import os
-#from your_model_module import model, tokenizer  # Replace with your imports
-print("Current Working Directory:", os.getcwd())
-filepath: r'..\saudi dialect GPT demo\app\UI.py'
+
+filepath: r'..\saudi dialect GPT demo\app'
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 tokenizer = RegexTokenizer()
@@ -39,7 +38,7 @@ model = GPTLanguageModel(
 ).to(device)
 model = torch.compile(model)
 
-checkpoint_path = model_file=os.path.join(os.path.dirname(__file__), 'finetuned', 'with contex 4k lines', 'checkpoint_19.pth')
+checkpoint_path = model_file=os.path.join(os.path.dirname(__file__), 'finetuned', 'with context 4k lines', 'checkpoint_19.pth')
 checkpoint = torch.load(checkpoint_path, weights_only=True)
 model_state_dict = checkpoint["model_state_dict"]
 model.load_state_dict(model_state_dict)
